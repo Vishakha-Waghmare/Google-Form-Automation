@@ -138,8 +138,7 @@ public class Wrappers {
 
             List<WebElement> addressList = driver.findElements(By.xpath("//div[contains(@class,'OA0qNb')]//div[contains(@class,'MocG8c')]"));
 
-            dropdown(addressList, input);
-            return true;
+            return dropdown(addressList, input);
         
         }
         
@@ -163,9 +162,12 @@ public class Wrappers {
             
             String displaydate = requiredDate.format(formatter);
 
-            sendInput(dateField, displaydate);
-            
-            return displaydate;
+            boolean dateEntered = sendInput(dateField, displaydate);
+
+            if (dateEntered) {
+                return displaydate;
+            }
+            return null;
         }
         catch(Exception e)
         {

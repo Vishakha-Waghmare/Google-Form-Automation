@@ -22,20 +22,6 @@ import demo.wrappers.Wrappers;
 
 public class TestCases {
     WebDriver driver;
-    
-    /*
-     * TODO: Write your tests here with testng @Test annotation. 
-     * Follow `testCase01` `testCase02`... format or what is provided in instructions
-     * 
-     * psedo code: 
-        1. Navigate to this google form with geturl method
-        2. confirm that url has loaded completely
-        
-     */
-     
-    /*
-     * Do not change the provided methods unless necessary, they will help in automation and assessment
-     */
 
     @Test
     public void testCase01()throws InterruptedException
@@ -46,10 +32,7 @@ public class TestCases {
         WebElement question1 = driver.findElement(By.xpath("//div[@id='i1']"));  
             Assert.assertNotNull(question1, "Name field is not found");
             WebElement name = driver.findElement(By.xpath("//div[@id='i1']/ancestor::div[contains(@class,'geS5n')]//input[@type='text']"));
-            Thread.sleep(3000);
             
-
-            //Wrappers wp = new Wrappers(); as it is static method we dont need to create object 
             boolean result1 = Wrappers.sendInput(name,"Crio Learner");
             Assert.assertTrue(result1, "Task 1 failed");
 
@@ -99,7 +82,6 @@ public class TestCases {
             boolean task5= wp.addressed("Ms");
             Assert.assertTrue(task5, "Task 5 failed");
 
-
             System.out.println("Task 5 completed successfully");
             Thread.sleep(3000);
 
@@ -119,7 +101,7 @@ public class TestCases {
         
             boolean task7 = wp.time("07", "30");
             Assert.assertTrue(task7, "Task 7 failed");
-             System.out.println("Task 7 completed successfully");
+            System.out.println("Task 7 completed successfully");
             Thread.sleep(3000);
 
 
