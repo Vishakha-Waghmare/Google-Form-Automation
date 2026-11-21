@@ -24,3 +24,15 @@ gradle-app.setting
 requirements.txt
 .vscode/
 venv/
+# Generated files
+.gradle/
+build/
+bin/
+
+# Crio assessment-only files
+__CRIO__/
+assesment/
+assesment_result.json
+run_assesment.sh
+run_platform_assesment.bat
+run_platform_assesment.sh
